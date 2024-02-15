@@ -1,13 +1,13 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import { RootStackParams } from '../../App';
+import { RootStackParams } from '../../../App';
 import { Image, Pressable, View } from 'react-native';
-import { images } from '../constants/Images';
+import { images } from '../../constants/Images';
 
-export type ViewHoursProps = {};
-type Props = NativeStackScreenProps<RootStackParams, "ViewHours">
+export type ViewDatesProps = {};
+type Props = NativeStackScreenProps<RootStackParams, "ViewDates">
 
-function ViewHours(props: Props) {
+function ViewDates(props: Props) {
     return (
         <View>
             <Pressable>
@@ -19,4 +19,4 @@ function ViewHours(props: Props) {
     );
 }
 
-export default ViewHours;
+export default ViewDates;

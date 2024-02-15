@@ -1,14 +1,14 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import { RootStackParams } from '../../App';
 import { Image, Pressable, Text, View } from 'react-native';
-import { images } from '../constants/Images';
-import { messages } from '../constants/Messages';
+import { RootStackParams } from '../../../App';
+import { images } from '../../constants/Images';
+import { messages } from '../../constants/Messages';
 
-export type ConfirmAllertProps = {};
-type Props = NativeStackScreenProps<RootStackParams, "ConfirmAllert">
+export type UsersSelectionProps = {};
+type Props = NativeStackScreenProps<RootStackParams, "UsersSelection">
 
-function ConfirmAllert(props: Props) {
+function UsersSelection(props: Props) {
     return (
         <View>
             <Pressable>
@@ -16,8 +16,7 @@ function ConfirmAllert(props: Props) {
             </Pressable>
 
             <View>
-                <Text>{messages.alertWhenAvailable}</Text>
-                {/* zakazivanje */}
+                {/* Users mapira se u usera i dugme na ciji se klik gura user u neku globalnu promenljivu */}
             </View>
 
             <View>
@@ -25,11 +24,11 @@ function ConfirmAllert(props: Props) {
                     <Text>{messages.accept}</Text>
                 </Pressable>
                 <Pressable>
-                    <Text>{messages.decline}</Text>
+                    <Text>{messages.cancel}</Text>
                 </Pressable>
             </View>
         </View>
     );
 }
 
-export default ConfirmAllert;
+export default UsersSelection;

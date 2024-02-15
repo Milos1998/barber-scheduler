@@ -1,14 +1,14 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import { RootStackParams } from '../../App';
+import { RootStackParams } from '../../../App';
 import { Image, Pressable, Text, View } from 'react-native';
-import { images } from '../constants/Images';
-import { messages } from '../constants/Messages';
+import { messages } from '../../constants/Messages';
+import { images } from '../../constants/Images';
 
-export type SelectServiceProps = {};
-type Props = NativeStackScreenProps<RootStackParams, "SelectService">
+export type SelectBarberProps = {};
+type Props = NativeStackScreenProps<RootStackParams, "SelectBarber">
 
-function SelectService(props: Props) {
+function SelectBarber(props: Props) {
     return (
         <View>
             <Pressable>
@@ -24,4 +24,4 @@ function SelectService(props: Props) {
     );
 }
 
-export default SelectService;
+export default SelectBarber;

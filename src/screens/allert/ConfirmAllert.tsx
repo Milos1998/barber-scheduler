@@ -1,14 +1,14 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import { RootStackParams } from '../../App';
+import { RootStackParams } from '../../../App';
 import { Image, Pressable, Text, View } from 'react-native';
-import { images } from '../constants/Images';
-import { messages } from '../constants/Messages';
+import { images } from '../../constants/Images';
+import { messages } from '../../constants/Messages';
 
-export type ConfirmCancelationProps = {};
-type Props = NativeStackScreenProps<RootStackParams, "ConfirmCancelation">
+export type ConfirmAllertProps = {};
+type Props = NativeStackScreenProps<RootStackParams, "ConfirmAllert">
 
-function ConfirmCancelation(props: Props) {
+function ConfirmAllert(props: Props) {
     return (
         <View>
             <Pressable>
@@ -16,6 +16,7 @@ function ConfirmCancelation(props: Props) {
             </Pressable>
 
             <View>
+                <Text>{messages.alertWhenAvailable}</Text>
                 {/* zakazivanje */}
             </View>
 
@@ -31,4 +32,4 @@ function ConfirmCancelation(props: Props) {
     );
 }
 
-export default ConfirmCancelation;
+export default ConfirmAllert;

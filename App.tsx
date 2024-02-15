@@ -2,16 +2,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login, { LoginProps } from './src/screens/Login';
 import Info, { InfoProps } from './src/screens/Info';
-import SelectService, { SelectServiceProps } from './src/screens/SelectService';
-import SelectBarber, { SelectBarberProps } from './src/screens/SelectBarber';
-import ViewDates, { ViewDatesProps } from './src/screens/ViewDates';
-import ViewHours, { ViewHoursProps } from './src/screens/ViewHours';
-import ConfirmAppointment, { ConfirmAppointmentProps } from './src/screens/ConfirmAppointment';
-import Appointments, { AppointmentsProps } from './src/screens/Appointments';
+import SelectService, { SelectServiceProps } from './src/screens/serviceScreens/SelectService';
+import SelectBarber, { SelectBarberProps } from './src/screens/serviceScreens/SelectBarber';
+import ViewDates, { ViewDatesProps } from './src/screens/serviceScreens/ViewDates';
+import ViewHours, { ViewHoursProps } from './src/screens/serviceScreens/ViewHours';
+import ConfirmAppointment, { ConfirmAppointmentProps } from './src/screens/serviceScreens/ConfirmAppointment';
+import Appointments, { AppointmentsProps } from './src/screens/apointment/Appointments';
 import Contact, { ContactProps } from './src/screens/Contact';
-import ConfirmCancelation, { ConfirmCancelationProps } from './src/screens/ConfirmCancelation';
-import ConfirmAllert, { ConfirmAllertProps } from './src/screens/ConfirmAllert';
-import ConfirmAllertRemoval, { ConfirmAllertRemovalProps } from './src/screens/ConfirmAllertRemoval';
+import ConfirmCancelation, { ConfirmCancelationProps } from './src/screens/apointment/ConfirmCancelation';
+import ConfirmAllert, { ConfirmAllertProps } from './src/screens/allert/ConfirmAllert';
+import ConfirmAllertRemoval, { ConfirmAllertRemovalProps } from './src/screens/allert/ConfirmAllertRemoval';
+import SetInfo, { SetInfoProps } from './src/screens/setInfo/SetInfo';
+import UsersSelection, { UsersSelectionProps } from './src/screens/user/UsersSelection';
+import SetInfoConfirmation, { SetInfoConfirmationProps } from './src/screens/setInfo/SetInfoConfirmation';
+import EditServices, { EditServicesProps } from './src/screens/services/EditServices';
 
 export type RootStackParams = {
   Login: LoginProps
@@ -26,6 +30,10 @@ export type RootStackParams = {
   ConfirmCancelation: ConfirmCancelationProps
   ConfirmAllert: ConfirmAllertProps
   ConfirmAllertRemoval: ConfirmAllertRemovalProps
+  UsersSelection: UsersSelectionProps
+  SetInfo: SetInfoProps
+  SetInfoConfirmation: SetInfoConfirmationProps
+  EditServices: EditServicesProps
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -33,7 +41,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='ConfirmAllertRemoval'>
+      <Stack.Navigator initialRouteName='EditServices'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="Info" component={ Info }/>
         <Stack.Screen name="SelectService" component={ SelectService }/>
@@ -46,6 +54,10 @@ export default function App() {
         <Stack.Screen name="ConfirmCancelation" component={ ConfirmCancelation }/>
         <Stack.Screen name="ConfirmAllert" component={ ConfirmAllert }/>
         <Stack.Screen name="ConfirmAllertRemoval" component={ ConfirmAllertRemoval }/>
+        <Stack.Screen name="UsersSelection" component={ UsersSelection }/>
+        <Stack.Screen name="SetInfo" component={ SetInfo }/>
+        <Stack.Screen name="SetInfoConfirmation" component={ SetInfoConfirmation }/>
+        <Stack.Screen name="EditServices" component={ EditServices }/>
       </Stack.Navigator>
     </NavigationContainer>
   );
