@@ -11,34 +11,30 @@ export const commonStyling = StyleSheet.create({
     },
     header: {
         flex: -1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    button: {
-        width: "80%",
-        height: 70,
-        flex: -1,
         flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        padding: 10,
+        paddingHorizontal: 20,
+    },
+    footer: {
+        flex: -1,
+        width: "100%",
         alignItems: "center",
         justifyContent: "center",
         alignContent: "center",
         gap: 10,
-        borderRadius: 10
+        margin: 20,
     },
-    greenButton: {
-        backgroundColor: "green"
+    confirmButton: {
+        backgroundColor: "cornflowerblue",
     },
-    redButton: {
-        backgroundColor: "red"
+    declineButton: {
+        backgroundColor: "orangered",
     },
-    input: {
-        width: "80%",
-        height: 70,
-        padding: 15,
-        borderColor: "black",
-        borderWidth: 2,
-        borderRadius: 10,
-        fontSize: 20,
+    infoButton: {
+        backgroundColor: "peachpuff",
     },
     flexRow: {
         flex: 1,
@@ -53,7 +49,4 @@ export const commonStyling = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: "yellow"
     },
-    text: {
-        fontSize: 20,
-    }
 });

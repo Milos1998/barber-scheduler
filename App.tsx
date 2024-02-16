@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login, { LoginProps } from './src/screens/Login';
-import Info, { InfoProps } from './src/screens/Info';
+import NotificationScreen, { NotificationScreenProps } from './src/screens/NotificationScreen';
 import SelectService, { SelectServiceProps } from './src/screens/serviceScreens/SelectService';
 import SelectBarber, { SelectBarberProps } from './src/screens/serviceScreens/SelectBarber';
 import ViewDates, { ViewDatesProps } from './src/screens/serviceScreens/ViewDates';
@@ -16,10 +16,12 @@ import SetInfo, { SetInfoProps } from './src/screens/setInfo/SetInfo';
 import UsersSelection, { UsersSelectionProps } from './src/screens/user/UsersSelection';
 import SetInfoConfirmation, { SetInfoConfirmationProps } from './src/screens/setInfo/SetInfoConfirmation';
 import EditServices, { EditServicesProps } from './src/screens/services/EditServices';
+import Ban, { BanProps } from './src/screens/Ban';
 
 export type RootStackParams = {
   Login: LoginProps
-  Info: InfoProps
+  NotificationScreen: NotificationScreenProps
+  Ban: BanProps
   SelectService: SelectServiceProps
   SelectBarber: SelectBarberProps
   ViewDates: ViewDatesProps
@@ -41,9 +43,10 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
+      <Stack.Navigator initialRouteName='Appointments'>
         <Stack.Screen name="Login" component={ Login }/>
-        <Stack.Screen name="Info" component={ Info }/>
+        <Stack.Screen name="NotificationScreen" component={ NotificationScreen }/>
+        <Stack.Screen name="Ban" component={ Ban }/>
         <Stack.Screen name="SelectService" component={ SelectService }/>
         <Stack.Screen name="SelectBarber" component={ SelectBarber }/>
         <Stack.Screen name="ViewDates" component={ ViewDates }/>

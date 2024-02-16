@@ -5,6 +5,8 @@ import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-nativ
 import { messages } from '../constants/Messages';
 import { images } from '../constants/Images';
 import { commonStyling } from '../constants/Styles';
+import ButtonC from '../components/ButtonC';
+import TextInputC from '../components/TextInputC';
 
 export type LoginProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "Login">;
@@ -12,10 +14,8 @@ type Props = NativeStackScreenProps<RootStackParams, "Login">;
 function Login(props: Props) {
     return (
         <View style={commonStyling.screen}>
-            <TextInput style={commonStyling.input} placeholder={messages.emailPlaceholder}/>
-            <Pressable style={[commonStyling.button, style.verificationButton]}>
-                <Text style={[commonStyling.text]}>{messages.sendVerification}</Text>
-            </Pressable>
+            <TextInputC placeholder={messages.emailPlaceholder}/>
+            <ButtonC label={messages.sendVerification} styles={[style.verificationButton]}/>
 
             <View style={style.loginSeparator}>
                 <Text style={[style.lineThrough, style.loginSeparatorText]}>                       </Text>
@@ -23,10 +23,7 @@ function Login(props: Props) {
                 <Text style={[style.lineThrough, style.loginSeparatorText]}>                       </Text>
             </View>
 
-            <Pressable style={[commonStyling.button, style.googleButton]}>
-                <Text style={[commonStyling.text]}>{messages.loginWithGmail}</Text>
-                <Image source={images.gmailLogo}></Image>
-            </Pressable>
+            <ButtonC label={messages.loginWithGmail} image={images.gmailLogo} styles={[style.googleButton]}/>
         </View>
     );
 }
