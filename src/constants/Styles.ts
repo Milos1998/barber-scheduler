@@ -63,4 +63,11 @@ export const commonStyling = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: "yellow"
     },
+    leftAlignedView: {
+        flex: -1,
+        alignItems: "baseline",
+        padding: 10,
+        width: "100%",
+        gap: 10,
+    },
 });

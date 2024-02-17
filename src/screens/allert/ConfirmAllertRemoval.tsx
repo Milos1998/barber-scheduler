@@ -1,32 +1,28 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParams } from '../../../App';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { images } from '../../constants/Images';
 import { messages } from '../../constants/Messages';
+import { commonStyling } from '../../constants/Styles';
+import TimeView from '../../components/TimeView';
+import ButtonC from '../../components/ButtonC';
 
 export type ConfirmAllertRemovalProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "ConfirmAllertRemoval">
 
 function ConfirmAllertRemoval(props: Props) {
     return (
-        <View>
-            <Pressable>
-                <Image source={images.backArrow}/>
-            </Pressable>
+        <View style={commonStyling.screen}>
+            <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+                <View style={commonStyling.leftAlignedView}>
+                    <TimeView time={Date()}/>
+                </View>
+            </ScrollView>
 
-            <View>
-                <Text>{messages.removeAllert}</Text>
-                {/* zakazivanje */}
-            </View>
-
-            <View>
-                <Pressable>
-                    <Text>{messages.accept}</Text>
-                </Pressable>
-                <Pressable>
-                    <Text>{messages.decline}</Text>
-                </Pressable>
+            <View style={commonStyling.footer}>
+                <ButtonC label={messages.accept} styles={[commonStyling.confirmButton]}/>
+                <ButtonC label={messages.cancel} styles={[commonStyling.declineButton]}/>
             </View>
         </View>
     );

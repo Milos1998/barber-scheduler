@@ -15,7 +15,7 @@ function Appointments(props: Props) {
     const renderAppointments = () => {
         return store.appointments.map((appointment, idx) => {
             return (
-                <View key={idx} style={styles.appointmentCont}>
+                <View key={idx} style={[commonStyling.leftAlignedView, styles.appointmentCont]}>
                     <AppointmentView {...appointment}/>
                     <ButtonC label={messages.decline} styles={[commonStyling.declineButton, styles.cancelButton]}/>
                 </View>
@@ -40,11 +40,7 @@ export default Appointments;
 
 const styles = StyleSheet.create({
     appointmentCont: {
-        flex: -1,
         backgroundColor: "paleturquoise",
-        padding: 10,
-        width: "100%",
-        gap: 10,
     },
     cancelButton: {
         alignSelf: "center",

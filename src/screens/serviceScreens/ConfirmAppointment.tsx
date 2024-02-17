@@ -18,7 +18,7 @@ function ConfirmAppointment(props: Props) {
     return (
         <View style={commonStyling.screen}>
             <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
-                <View style={styles.appointmentCont}>
+                <View style={[commonStyling.leftAlignedView, styles.appointmentCont]}>
                         <AppointmentView {...appointment}/>
                 </View>
             </ScrollView>
@@ -35,10 +35,6 @@ export default ConfirmAppointment;
 
 const styles = StyleSheet.create({
     appointmentCont: {
-        flex: -1,
         backgroundColor: "paleturquoise",
-        padding: 10,
-        width: "100%",
-        gap: 10,
     },
 });
