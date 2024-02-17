@@ -36,5 +36,9 @@ export const messages = {
         serviceTimePlaceholder: "60",
         servicePrice: "Cena usluge",
         servicePricePlaceholder: "700",
+        barberFirstName: "Ime frizera",
+        barberFirstNamePlaceholder: "Ivan",
+        barberLastName: "Prezime frizera",
+        barberLastNamePlaceholder: "Ivanovic",
     }
 } as const;

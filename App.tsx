@@ -15,9 +15,11 @@ import ConfirmAllertRemoval, { ConfirmAllertRemovalProps } from './src/screens/a
 import SetInfo, { SetInfoProps } from './src/screens/setInfo/SetInfo';
 import UsersSelection, { UsersSelectionProps } from './src/screens/user/UsersSelection';
 import SetInfoConfirmation, { SetInfoConfirmationProps } from './src/screens/setInfo/SetInfoConfirmation';
-import EditServices, { EditServicesProps } from './src/screens/services/EditServices';
+import EditServices, { EditServicesProps } from './src/screens/editScreens/EditServices';
 import Ban, { BanProps } from './src/screens/Ban';
-import ServiceEditor, { ServiceEditorProps } from './src/screens/services/ServiceEditor';
+import ServiceEditor, { ServiceEditorProps } from './src/screens/editScreens/ServiceEditor';
+import EditBarbers, { EditBarbersProps } from './src/screens/editScreens/EditBarbers';
+import BarberEditor, { BarberEditorProps } from './src/screens/editScreens/BarberEditor';
 
 export type RootStackParams = {
   Login: LoginProps
@@ -38,6 +40,8 @@ export type RootStackParams = {
   SetInfoConfirmation: SetInfoConfirmationProps
   EditServices: EditServicesProps
   ServiceEditor: ServiceEditorProps
+  EditBarbers: EditBarbersProps
+  BarberEditor: BarberEditorProps
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -45,7 +49,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='ServiceEditor'>
+      <Stack.Navigator initialRouteName='BarberEditor'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="NotificationScreen" component={ NotificationScreen }/>
         <Stack.Screen name="Ban" component={ Ban }/>
@@ -64,6 +68,8 @@ export default function App() {
         <Stack.Screen name="SetInfoConfirmation" component={ SetInfoConfirmation }/>
         <Stack.Screen name="EditServices" component={ EditServices }/>
         <Stack.Screen name="ServiceEditor" component={ ServiceEditor }/>
+        <Stack.Screen name="EditBarbers" component={ EditBarbers }/>
+        <Stack.Screen name="BarberEditor" component={ BarberEditor }/>
       </Stack.Navigator>
     </NavigationContainer>
   );
