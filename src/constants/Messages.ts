@@ -3,6 +3,7 @@ export const messages = {
     sendVerification: "Posalji verifikacioni mejl",
     loginSeparator: "ili",
     loginWithGmail: "Uloguj se putem gmail-a",
+    customer: "Musterija",
     info: "Kontakt",
     ok: "Ok",
     next: "Dalje",
@@ -25,4 +26,5 @@ export const messages = {
     infoPlaceholder: "Postovane musterije, od 19.3. do 22.3. cemo biti na godisnjem odmoru...",
     confirmSettingInfo: "Posalji obavestenje:",
     confirmSettingInfoRecipients: "Odabranim korisnicima:",
+    appointment: "Termin:",
 } as const;

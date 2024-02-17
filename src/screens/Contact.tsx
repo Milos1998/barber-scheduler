@@ -14,10 +14,10 @@ function Contact(props: Props) {
     return (
         <View style={commonStyling.screen}>
             <View style={commonStyling.header}>
-                <ButtonC styles={[{width: "auto"}]} image={images.backArrow}/>
+                <ButtonC styles={[commonStyling.headerButton]} image={images.backArrow}/>
             </View>
 
-            <ScrollView style={styles.scroll} contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: "center" }}>
+            <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
                 <View style={styles.section}>
                     <Text style={styles.sectionHeader}>{messages.phone}</Text>
                     <ButtonC label={messages.phoneNum} styles={[styles.phoneButton]}/>
@@ -34,10 +34,6 @@ function Contact(props: Props) {
 export default Contact;
 
 const styles = StyleSheet.create({
-    scroll: {
-        padding: 20,
-        top: -40,
-    },
     section: {
         flex: -1,
         margin: 10,

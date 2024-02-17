@@ -18,6 +18,9 @@ export const commonStyling = StyleSheet.create({
         padding: 10,
         paddingHorizontal: 20,
     },
+    headerButton: {
+        width: "auto",
+    },
     footer: {
         flex: -1,
         width: "100%",
@@ -35,6 +38,17 @@ export const commonStyling = StyleSheet.create({
     },
     infoButton: {
         backgroundColor: "peachpuff",
+    },
+    scroll: {
+        width: "100%",
+    },
+    scrollInner: {
+        flexGrow: 1,
+        justifyContent: "flex-start",
+        alignItems: "center",
+        alignContent: "center",
+        gap: 20,
+        padding: 20,
     },
     flexRow: {
         flex: 1,
