@@ -81,6 +81,8 @@ class Store {
     public endHours: number = 19;
 
     public endMinutes: number = 30;
+
+    public selectedService?: Service;
 }
 
 export const store = new Store();

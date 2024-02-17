@@ -17,6 +17,7 @@ import UsersSelection, { UsersSelectionProps } from './src/screens/user/UsersSel
 import SetInfoConfirmation, { SetInfoConfirmationProps } from './src/screens/setInfo/SetInfoConfirmation';
 import EditServices, { EditServicesProps } from './src/screens/services/EditServices';
 import Ban, { BanProps } from './src/screens/Ban';
+import ServiceEditor, { ServiceEditorProps } from './src/screens/services/ServiceEditor';
 
 export type RootStackParams = {
   Login: LoginProps
@@ -36,6 +37,7 @@ export type RootStackParams = {
   SetInfo: SetInfoProps
   SetInfoConfirmation: SetInfoConfirmationProps
   EditServices: EditServicesProps
+  ServiceEditor: ServiceEditorProps
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -43,7 +45,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='ConfirmCancelation'>
+      <Stack.Navigator initialRouteName='ServiceEditor'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="NotificationScreen" component={ NotificationScreen }/>
         <Stack.Screen name="Ban" component={ Ban }/>
@@ -61,6 +63,7 @@ export default function App() {
         <Stack.Screen name="SetInfo" component={ SetInfo }/>
         <Stack.Screen name="SetInfoConfirmation" component={ SetInfoConfirmation }/>
         <Stack.Screen name="EditServices" component={ EditServices }/>
+        <Stack.Screen name="ServiceEditor" component={ ServiceEditor }/>
       </Stack.Navigator>
     </NavigationContainer>
   );

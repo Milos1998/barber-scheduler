@@ -1,12 +1,11 @@
 import React from 'react';
-import { Image, Pressable, StyleSheet, Text } from 'react-native';
+import { Image, Pressable, PressableProps, StyleSheet, Text } from 'react-native';
 
 export type ButtonCProps = {
     label?: string,
     image?: any,
-    onPress?: () => void,
     styles?: Object[],
-}
+} & PressableProps
 
 function ButtonC(props: ButtonCProps) {
     const componentStyle = props.styles !== undefined ? [styles.button, ...props.styles] : [styles.button];
@@ -24,7 +23,7 @@ export default ButtonC;
 const styles = StyleSheet.create({
     button: {
         width: "80%",
-        height: 70,
+        padding: 15,
         flex: -1,
         flexDirection: "row",
         alignItems: "center",

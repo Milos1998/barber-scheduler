@@ -1,16 +1,15 @@
 import React from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet, TextInput, TextInputProps } from 'react-native';
 
 export type TextInputCProps = {
     styles?: Object[]
-    placeholder?: string
-}
+} & TextInputProps;
 
 function TextInputC(props: TextInputCProps) {
     const componentStyle = props.styles !== undefined ? [styles.input, ...props.styles] : [styles.input];
 
     return (
-        <TextInput placeholder={props.placeholder} style={componentStyle}/>
+        <TextInput {...props} style={componentStyle}/>
     );
 }
 
@@ -19,8 +18,8 @@ export default TextInputC;
 const styles = StyleSheet.create({
     input: {
         width: "80%",
-        height: 70,
-        padding: 15,
+        padding: 10,
+        paddingHorizontal: 15,
         borderColor: "black",
         borderWidth: 2,
         borderRadius: 10,

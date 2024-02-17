@@ -10,6 +10,8 @@ export const messages = {
     accept: "Potvrdi",
     decline: "Otkazi",
     addMore: "Zakazi jos",
+    add: "Dodaj",
+    delete: "Obrisi",
     cancelAppointment: "Otkazi termin",
     phone: "Telefon",
     phoneNum: "+381 64 123 456",
@@ -27,4 +29,12 @@ export const messages = {
     confirmSettingInfo: "Posalji obavestenje:",
     confirmSettingInfoRecipients: "Odabranim korisnicima:",
     appointment: "Termin:",
+    editor: {
+        serviceName: "Naziv usluge",
+        serviceNamePlaceholder: "Fejd",
+        serviceTime: "Potrebno vremena (u minutima)",
+        serviceTimePlaceholder: "60",
+        servicePrice: "Cena usluge",
+        servicePricePlaceholder: "700",
+    }
 } as const;
