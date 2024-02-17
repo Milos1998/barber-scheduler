@@ -43,7 +43,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Appointments'>
+      <Stack.Navigator initialRouteName='ConfirmAppointment'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="NotificationScreen" component={ NotificationScreen }/>
         <Stack.Screen name="Ban" component={ Ban }/>

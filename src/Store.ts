@@ -67,6 +67,20 @@ class Store {
     public services: Service[] = [];
 
     public currentUser: Customer = new Customer("a", "aaa", "aaaa", "1");
+
+    public weeksDisplayed: number = 3;
+
+    public minutesIncrement: number = 10;
+
+    public selectedDate: Date = new Date();
+
+    public startHours: number = 9;
+
+    public startMinutes: number = 0;
+
+    public endHours: number = 19;
+
+    public endMinutes: number = 30;
 }
 
 export const store = new Store();
