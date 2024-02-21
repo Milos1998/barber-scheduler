@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { messages } from '../constants/Messages';
+import { messages } from '../../constants/Messages';
 
 type TimeViewProps = {
     time: string

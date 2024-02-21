@@ -5,8 +5,8 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import ButtonC from '../../components/ButtonC';
 import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
-import AppointmentView from '../../components/AppointmentView';
-import ServiceView from '../../components/ServiceView';
+import AppointmentView from '../../components/views/AppointmentView';
+import ServiceView from '../../components/views/ServiceView';
 import { store } from '../../Store';
 import { images } from '../../constants/Images';
 

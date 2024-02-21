@@ -1,7 +1,7 @@
 import React from 'react';
-import { Customer } from '../Store';
+import { Customer } from '../../Store';
 import { StyleSheet, Text } from 'react-native';
-import { messages } from '../constants/Messages';
+import { messages } from '../../constants/Messages';
 
 function CustomerView(props: Customer) {
     return (

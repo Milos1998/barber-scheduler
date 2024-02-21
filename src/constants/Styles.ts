@@ -50,6 +50,15 @@ export const commonStyling = StyleSheet.create({
         gap: 20,
         padding: 20,
     },
+    scrollHorizontal: {
+        flexGrow: 1,
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        alignContent: "center",
+        gap: 10,
+        padding: 10,
+    },
     flexRow: {
         flex: 1,
         flexDirection: "row",
@@ -61,7 +70,6 @@ export const commonStyling = StyleSheet.create({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "yellow"
     },
     leftAlignedView: {
         flex: -1,

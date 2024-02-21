@@ -5,7 +5,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
 import ButtonC from '../../components/ButtonC';
-import AppointmentView from '../../components/AppointmentView';
+import AppointmentView from '../../components/views/AppointmentView';
 import { Appointment, Customer, store } from '../../Store';
 
 export type ConfirmAppointmentProps = {};

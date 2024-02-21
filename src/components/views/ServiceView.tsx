@@ -1,5 +1,5 @@
 import React from 'react';
-import { Service } from '../Store';
+import { Service } from '../../Store';
 import { StyleSheet, Text } from 'react-native';
 
 function ServiceView(props: Service) {

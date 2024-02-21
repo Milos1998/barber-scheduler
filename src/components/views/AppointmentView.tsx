@@ -1,7 +1,7 @@
 import React from 'react';
-import { Appointment } from '../Store';
+import { Appointment } from '../../Store';
 import { StyleSheet, Text } from 'react-native';
-import { messages } from '../constants/Messages';
+import { messages } from '../../constants/Messages';
 import TimeView from './TimeView';
 import ServiceView from './ServiceView';
 import BarberView from './BarberView';

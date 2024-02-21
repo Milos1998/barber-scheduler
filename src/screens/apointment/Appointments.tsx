@@ -6,7 +6,7 @@ import { messages } from '../../constants/Messages';
 import ButtonC from '../../components/ButtonC';
 import { commonStyling } from '../../constants/Styles';
 import { store } from '../../Store';
-import AppointmentView from '../../components/AppointmentView';
+import AppointmentView from '../../components/views/AppointmentView';
 
 export type AppointmentsProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "Appointments">

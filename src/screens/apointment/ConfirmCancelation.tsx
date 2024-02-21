@@ -6,7 +6,7 @@ import { images } from '../../constants/Images';
 import { messages } from '../../constants/Messages';
 import ButtonC from '../../components/ButtonC';
 import { commonStyling } from '../../constants/Styles';
-import AppointmentView from '../../components/AppointmentView';
+import AppointmentView from '../../components/views/AppointmentView';
 import { Appointment, Customer, store } from '../../Store';
 
 export type ConfirmCancelationProps = {};

@@ -6,7 +6,7 @@ import { images } from '../../constants/Images';
 import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
 import ButtonC from '../../components/ButtonC';
-import TimeView from '../../components/TimeView';
+import TimeView from '../../components/views/TimeView';
 
 export type ConfirmAllertProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "ConfirmAllert">

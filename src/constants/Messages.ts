@@ -40,5 +40,6 @@ export const messages = {
         barberFirstNamePlaceholder: "Ivan",
         barberLastName: "Prezime frizera",
         barberLastNamePlaceholder: "Ivanovic",
-    }
+    },
+    daysOfWeek: ["Nedelja", "Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota"]
 } as const;

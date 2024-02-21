@@ -7,7 +7,7 @@ import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
 import { store } from '../../Store';
 import { images } from '../../constants/Images';
-import BarberView from '../../components/BarberView';
+import BarberView from '../../components/views/BarberView';
 
 export type EditBarbersProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "EditBarbers">;
