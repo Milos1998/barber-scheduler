@@ -5,7 +5,8 @@ import { store } from '../../Store';
 import ServiceView from '../views/ServiceView';
 
 type ServiceSelectorProps = {
-    styles?: Object[]
+    styles?: Object[],
+    horizontal?: boolean,
 }
 
 function ServiceSelector(props: ServiceSelectorProps) {
@@ -23,7 +24,7 @@ function ServiceSelector(props: ServiceSelectorProps) {
     }
 
     return (
-        <ScrollView horizontal={true} style={commonStyling.scroll} contentContainerStyle={scrollStyling}>
+        <ScrollView horizontal={props.horizontal ?? true} style={commonStyling.scroll} contentContainerStyle={scrollStyling}>
             {renderServices()}
         </ScrollView>
     );

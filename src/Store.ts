@@ -98,9 +98,9 @@ store.services.push(new Service("Fejd", 30, 500));
 store.services.push(new Service("Brada", 20, 200));
 store.services.push(new Service("Fejd i brada", 50, 700));
 
-store.appointments.push(new Appointment(Date(), new Customer("petar.peric@gmail.com", "Petar", "Peric", "2"), store.barbers[0], store.services[0]));
-store.appointments.push(new Appointment(Date(), new Customer("mitar.miric@gmail.com", "Mitar", "Miric", "3"), store.barbers[1], store.services[1]));
-store.appointments.push(new Appointment(Date(), new Customer("mika.mikic@gmail.com", "Mika", "Mikic", "4"), store.barbers[0], store.services[2]));
+// store.appointments.push(new Appointment(Date(), new Customer("petar.peric@gmail.com", "Petar", "Peric", "2"), store.barbers[0], store.services[0]));
+// store.appointments.push(new Appointment(Date(), new Customer("mitar.miric@gmail.com", "Mitar", "Miric", "3"), store.barbers[1], store.services[1]));
+// store.appointments.push(new Appointment(Date(), new Customer("mika.mikic@gmail.com", "Mika", "Mikic", "4"), store.barbers[0], store.services[2]));
 
 const today = new Date();
 for(let i = 0; i < 14; i++) {

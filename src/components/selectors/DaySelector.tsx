@@ -6,11 +6,12 @@ import { commonStyling } from '../../constants/Styles';
 import DayButton from './DayButton';
 
 type DaySelectorProps = {
-    containerStyles?: Object[]
+    containerStyles?: Object[],
+    horizontal?: boolean,
 }
 
 function DaySelector(props: DaySelectorProps) {
-    const scrollStyling: Object[] = [commonStyling.scrollHorizontal, styles.scroll];
+    const scrollStyling: Object[] = [commonStyling.scrollHorizontal];
     if (props.containerStyles !== undefined) scrollStyling.push(...props.containerStyles)
 
     const renderDays = () => {
@@ -22,16 +23,10 @@ function DaySelector(props: DaySelectorProps) {
     }
 
     return (
-        <ScrollView horizontal={true} style={commonStyling.scroll} contentContainerStyle={scrollStyling} showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal={props.horizontal ?? true} style={commonStyling.scroll} contentContainerStyle={scrollStyling} showsHorizontalScrollIndicator={false}>
             {renderDays()}
         </ScrollView>
     );
 }
 
 export default DaySelector;
-
-const styles = StyleSheet.create({
-    scroll: {
-        paddingBottom: 20
-    }
-});

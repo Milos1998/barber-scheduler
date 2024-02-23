@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParams } from '../../../App';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { commonStyling } from '../../constants/Styles';
 import BarberSelector from '../../components/selectors/BarberSelector';
 import DaySelector from '../../components/selectors/DaySelector';
@@ -13,19 +13,15 @@ type Props = NativeStackScreenProps<RootStackParams, "OrderScreen">;
 
 function OrderScreen(props: Props) {
     return (
-        <ScrollView style={commonStyling.scroll} contentContainerStyle={[commonStyling.scrollInner, styles.scrollInner]}>
-            <BarberSelector />
-            <ServiceSelector />
-            <DaySelector />
+        <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+            <View style={commonStyling.headerVertical}>
+                <BarberSelector />
+                <ServiceSelector />
+                <DaySelector />
+            </View>
             <HourSelector />
         </ScrollView>
     );
 }
 
 export default OrderScreen;
-
-const styles = StyleSheet.create({
-    scrollInner: {
-        gap: 0,
-    }
-});

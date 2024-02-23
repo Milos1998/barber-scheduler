@@ -8,7 +8,7 @@ function CustomerView(props: Customer) {
         <>
             <Text style={styles.header}>{messages.customer}:</Text>
             <Text>
-                <Text>{props.firstName}</Text>
+                <Text>{props.firstName} </Text>
                 <Text>{props.lastName}</Text>
             </Text>
         </>

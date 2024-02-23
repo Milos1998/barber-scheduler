@@ -14,6 +14,8 @@ import ServiceEditor, { ServiceEditorProps } from './src/screens/edit/ServiceEdi
 import EditBarbers, { EditBarbersProps } from './src/screens/edit/EditBarbers';
 import BarberEditor, { BarberEditorProps } from './src/screens/edit/BarberEditor';
 import OrderScreen, { OrderScreenProps } from './src/screens/order/OrderScreen';
+import BarbersMenu, { BarbersMenuProps } from './src/screens/barber/BarbersMenu';
+import AllAppointments, { AllAppointmentsProps } from './src/screens/barber/AllAppointments';
 
 export type RootStackParams = {
   Login: LoginProps
@@ -30,6 +32,8 @@ export type RootStackParams = {
   EditBarbers: EditBarbersProps
   BarberEditor: BarberEditorProps
   OrderScreen: OrderScreenProps
+  BarbersMenu: BarbersMenuProps
+  AllAppointments: AllAppointmentsProps
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -37,7 +41,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='OrderScreen'>
+      <Stack.Navigator initialRouteName='AllAppointments'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="NotificationScreen" component={ NotificationScreen }/>
         <Stack.Screen name="Ban" component={ Ban }/>
@@ -52,6 +56,8 @@ export default function App() {
         <Stack.Screen name="EditBarbers" component={ EditBarbers }/>
         <Stack.Screen name="BarberEditor" component={ BarberEditor }/>
         <Stack.Screen name="OrderScreen" component={ OrderScreen }/>
+        <Stack.Screen name="BarbersMenu" component={ BarbersMenu }/>
+        <Stack.Screen name="AllAppointments" component={ AllAppointments }/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -18,6 +18,11 @@ export const commonStyling = StyleSheet.create({
         padding: 10,
         paddingHorizontal: 20,
     },
+    headerVertical: {
+        flex: -1,
+        alignItems: "center",
+        width: "100%",
+    },
     headerButton: {
         width: "auto",
     },
@@ -47,7 +52,7 @@ export const commonStyling = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
         alignContent: "center",
-        gap: 20,
+        gap: 10,
         padding: 20,
     },
     scrollHorizontal: {

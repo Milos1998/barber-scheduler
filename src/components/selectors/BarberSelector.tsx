@@ -5,7 +5,8 @@ import { store } from '../../Store';
 import { commonStyling } from '../../constants/Styles';
 
 type BarberSelectorProps = {
-    containerStyles?: Object[]
+    containerStyles?: Object[],
+    horizontal?: boolean,
 }
 
 function BarberSelector(props: BarberSelectorProps) {
@@ -22,7 +23,7 @@ function BarberSelector(props: BarberSelectorProps) {
     }
 
     return (
-        <ScrollView horizontal={true} style={commonStyling.scroll} contentContainerStyle={scrollStyling}>
+        <ScrollView horizontal={props.horizontal ?? true} style={commonStyling.scroll} contentContainerStyle={scrollStyling}>
             {renderBarbers()}
         </ScrollView>
     );
