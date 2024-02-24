@@ -5,8 +5,8 @@ import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-nativ
 import { messages } from '../../constants/Messages';
 import { images } from '../../constants/Images';
 import { commonStyling } from '../../constants/Styles';
-import ButtonC from '../../components/ButtonC';
-import TextInputC from '../../components/TextInputC';
+import ButtonC from '../../components/customElements/ButtonC';
+import TextInputC from '../../components/customElements/TextInputC';
 
 export type LoginProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "Login">;

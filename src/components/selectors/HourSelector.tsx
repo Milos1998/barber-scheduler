@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonC from '../ButtonC';
+import ButtonC from '../customElements/ButtonC';
 import { store } from '../../Store';
 import { ScrollView, StyleSheet } from 'react-native';
 import { commonStyling } from '../../constants/Styles';

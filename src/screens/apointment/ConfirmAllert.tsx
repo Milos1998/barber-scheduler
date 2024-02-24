@@ -5,7 +5,7 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import { images } from '../../constants/Images';
 import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
-import ButtonC from '../../components/ButtonC';
+import ButtonC from '../../components/customElements/ButtonC';
 import TimeView from '../../components/views/TimeView';
 
 export type ConfirmAllertProps = {};

@@ -7,7 +7,7 @@ import BarberSelector from '../../components/selectors/BarberSelector';
 import DaySelector from '../../components/selectors/DaySelector';
 import { store } from '../../Store';
 import AppointmentView from '../../components/views/AppointmentView';
-import ButtonC from '../../components/ButtonC';
+import ButtonC from '../../components/customElements/ButtonC';
 import { messages } from '../../constants/Messages';
 
 export type AllAppointmentsProps = {};
@@ -31,7 +31,6 @@ function AllAppointments(props: Props) {
                 <BarberSelector />
                 <DaySelector />
             </View>
-            {/* <HourSelector /> */}
             <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
                 {renderAppointments()}
             </ScrollView>

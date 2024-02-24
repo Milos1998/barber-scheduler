@@ -4,7 +4,7 @@ import { RootStackParams } from '../../../App';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { images } from '../../constants/Images';
 import { messages } from '../../constants/Messages';
-import ButtonC from '../../components/ButtonC';
+import ButtonC from '../../components/customElements/ButtonC';
 import { commonStyling } from '../../constants/Styles';
 import AppointmentView from '../../components/views/AppointmentView';
 import { Appointment, Customer, store } from '../../Store';

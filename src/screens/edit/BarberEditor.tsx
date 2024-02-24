@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { RootStackParams } from '../../../App';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { messages } from '../../constants/Messages';
-import ButtonC from '../../components/ButtonC';
+import ButtonC from '../../components/customElements/ButtonC';
 import { commonStyling } from '../../constants/Styles';
 import { images } from '../../constants/Images';
-import TextInputC from '../../components/TextInputC';
+import TextInputC from '../../components/customElements/TextInputC';
 import { store } from '../../Store';
 
 export type BarberEditorProps = {};

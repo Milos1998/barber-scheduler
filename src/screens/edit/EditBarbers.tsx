@@ -2,7 +2,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParams } from '../../../App';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import ButtonC from '../../components/ButtonC';
+import ButtonC from '../../components/customElements/ButtonC';
 import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
 import { store } from '../../Store';

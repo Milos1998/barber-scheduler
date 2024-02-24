@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login, { LoginProps } from './src/screens/login/Login';
-import NotificationScreen, { NotificationScreenProps } from './src/screens/NotificationScreen';
 import ConfirmAppointment, { ConfirmAppointmentProps } from './src/screens/apointment/ConfirmAppointment';
 import Appointments, { AppointmentsProps } from './src/screens/apointment/Appointments';
 import Contact, { ContactProps } from './src/screens/Contact';
@@ -19,7 +18,6 @@ import AllAppointments, { AllAppointmentsProps } from './src/screens/barber/AllA
 
 export type RootStackParams = {
   Login: LoginProps
-  NotificationScreen: NotificationScreenProps
   Ban: BanProps
   ConfirmAppointment: ConfirmAppointmentProps
   Appointments: AppointmentsProps
@@ -43,7 +41,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='AllAppointments'>
         <Stack.Screen name="Login" component={ Login }/>
-        <Stack.Screen name="NotificationScreen" component={ NotificationScreen }/>
         <Stack.Screen name="Ban" component={ Ban }/>
         <Stack.Screen name="ConfirmAppointment" component={ ConfirmAppointment }/>
         <Stack.Screen name="Appointments" component={ Appointments }/>
