@@ -1,6 +1,5 @@
 import React from 'react';
-import { ScrollView, ScrollViewProps, View } from 'react-native';
-import { commonStyling } from '../../constants/Styles';
+import { ScrollView, ScrollViewProps, StyleSheet, View } from 'react-native';
 
 type Props = ScrollViewProps & {
     wrapperStyle?: Object[],
@@ -12,11 +11,11 @@ function ScrollViewC(props: Props) {
     const innerStyle: Object[] = [];
 
     if (props.horizontal) {
-        wrapperStyle.push(commonStyling.scrollHorizontal);
-        innerStyle.push(commonStyling.scrollInnerHorizontal);
+        wrapperStyle.push(styles.scrollHorizontal);
+        innerStyle.push(styles.scrollInnerHorizontal);
     } else {
-        wrapperStyle.push(commonStyling.scroll);
-        innerStyle.push(commonStyling.scrollInner);
+        wrapperStyle.push(styles.scroll);
+        innerStyle.push(styles.scrollInner);
     }
 
     if (props.wrapperStyle !== undefined) wrapperStyle.push(...props.wrapperStyle);
@@ -30,3 +29,31 @@ function ScrollViewC(props: Props) {
 }
 
 export default ScrollViewC;
+
+const styles = StyleSheet.create({
+    scroll: {
+        width: "100%",
+        flex: 1,
+    },
+    scrollHorizontal: {
+        width: "100%",
+        flex: -1,
+    },
+    scrollInner: {
+        flexGrow: 1,
+        justifyContent: "flex-start",
+        alignItems: "center",
+        alignContent: "center",
+        gap: 10,
+        padding: 20,
+    },
+    scrollInnerHorizontal: {
+        flexGrow: 1,
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        alignContent: "center",
+        gap: 10,
+        padding: 10,
+    },
+});

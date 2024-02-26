@@ -43,33 +43,6 @@ export const commonStyling = StyleSheet.create({
     infoButton: {
         backgroundColor: "peachpuff",
     },
-    scroll: {
-        width: "100%",
-        flex: 1,
-    },
-    scrollHorizontal: {
-        width: "100%",
-        flex: -1,
-    },
-    scrollInner: {
-        flexGrow: 1,
-        justifyContent: "flex-start",
-        alignItems: "center",
-        alignContent: "center",
-        gap: 10,
-        padding: 20,
-        // backgroundColor: "red"
-    },
-    scrollInnerHorizontal: {
-        flexGrow: 1,
-        flexDirection: "row",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        alignContent: "center",
-        gap: 10,
-        padding: 10,
-        // backgroundColor: "blue"
-    },
     flexColumn: {
         flex: -1,
         flexDirection: "column",
