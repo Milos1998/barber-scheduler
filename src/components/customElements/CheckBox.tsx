@@ -34,11 +34,14 @@ export default CheckBox;
 const styles = StyleSheet.create({
     main: {
         flex: -1,
-        flexDirection: "column",
+        flexDirection: "row",
+        gap: 15,
         alignItems: "center",
         justifyContent: "center",
     },
     box: {
+        borderColor: "black",
+        borderWidth: 1,
         width: 20,
         height: 20,
     },
@@ -46,6 +49,6 @@ const styles = StyleSheet.create({
         backgroundColor: "blue",
     },
     label: {
-        fontSize: 12,
+        fontSize: 20,
     }
 })

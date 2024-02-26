@@ -1,25 +1,24 @@
 import React from 'react';
+import ScrollViewC from '../../components/customElements/ScrollViewC';
+import ButtonC from '../../components/customElements/ButtonC';
 import { StyleSheet, View } from 'react-native';
+import BarberSelector from '../../components/selectors/BarberSelector';
 import { commonStyling } from '../../constants/Styles';
+import { messages } from '../../constants/Messages';
+import { store } from '../../Store';
+import BanView from '../../components/views/BanView';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParams } from '../../../App';
-import BarberSelector from '../../components/selectors/BarberSelector';
-import DaySelector from '../../components/selectors/DaySelector';
-import { store } from '../../Store';
-import AppointmentView from '../../components/views/AppointmentView';
-import ButtonC from '../../components/customElements/ButtonC';
-import { messages } from '../../constants/Messages';
-import ScrollViewC from '../../components/customElements/ScrollViewC';
 
-export type AllAppointmentsProps = {};
-type Props = NativeStackScreenProps<RootStackParams, "AllAppointments">;
+export type AllBansProps = {};
+type Props = NativeStackScreenProps<RootStackParams, "AllBans">;
 
-function AllAppointments(props: Props) {
-    const renderAppointments = () => {
-        return store.appointments.map((appointment, idx) => {
+function AllBans(props: Props) {
+    const renderBans = () => {
+        return store.bans.map((ban, idx) => {
             return (
                 <View key={idx} style={[commonStyling.leftAlignedView, styles.appointmentCont]}>
-                    <AppointmentView {...appointment}/>
+                    <BanView {...ban} displayAll={true}/>
                     <ButtonC label={messages.decline} styles={[commonStyling.declineButton, styles.cancelButton]}/>
                 </View>
             )
@@ -30,11 +29,10 @@ function AllAppointments(props: Props) {
         <View style={commonStyling.screen}>
             <View style={commonStyling.headerVertical}>
                 <BarberSelector horizontal={true} />
-                <DaySelector />
             </View>
 
             <ScrollViewC>
-                {renderAppointments()}
+                {renderBans()}
             </ScrollViewC>
 
             <View style={commonStyling.footer}>
@@ -44,7 +42,7 @@ function AllAppointments(props: Props) {
     );
 }
 
-export default AllAppointments;
+export default AllBans;
 
 const styles = StyleSheet.create({
     appointmentCont: {

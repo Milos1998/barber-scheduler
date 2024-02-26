@@ -6,7 +6,7 @@ import { messages } from '../../constants/Messages';
 function CustomerView(props: User) {
     return (
         <>
-            <Text style={styles.header}>{messages.customer}:</Text>
+            <Text style={styles.header}>{messages.customer}: </Text>
             <Text>
                 <Text>{props.firstName} </Text>
                 <Text>{props.lastName}</Text>

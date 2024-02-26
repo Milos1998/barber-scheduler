@@ -12,11 +12,8 @@ function TimeView(props: TimeViewProps) {
     return (
         <>
             <Text>
-                <Text>{messages.date}: </Text>
                 <Text>{date.getDate()}/{date.getMonth()}/{date.getFullYear()}</Text>
-            </Text>
-            <Text>
-                <Text>{messages.hours}: </Text>
+                <Text> {messages.at} </Text>
                 <Text>{date.getHours()}:{date.getMinutes()}</Text>
             </Text>
         </>

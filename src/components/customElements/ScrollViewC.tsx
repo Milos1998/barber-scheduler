@@ -34,10 +34,13 @@ const styles = StyleSheet.create({
     scroll: {
         width: "100%",
         flex: 1,
+        padding: 20,
     },
     scrollHorizontal: {
         width: "100%",
         flex: -1,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
     },
     scrollInner: {
         flexGrow: 1,
@@ -45,7 +48,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignContent: "center",
         gap: 10,
-        padding: 20,
     },
     scrollInnerHorizontal: {
         flexGrow: 1,
@@ -54,6 +56,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignContent: "center",
         gap: 10,
-        padding: 10,
     },
 });

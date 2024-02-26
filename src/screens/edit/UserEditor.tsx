@@ -5,9 +5,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { messages } from '../../constants/Messages';
 import ButtonC from '../../components/customElements/ButtonC';
 import { commonStyling } from '../../constants/Styles';
-import { images } from '../../constants/Images';
 import { User } from '../../Store';
 import ScrollViewC from '../../components/customElements/ScrollViewC';
+import CheckBox from '../../components/customElements/CheckBox';
 
 export type UserEditorProps = {
     user: User
@@ -19,20 +19,18 @@ function UserEditor(props: Props) {
 
     return (
         <View style={commonStyling.screen}>
-            <View style={commonStyling.header}>
-                <ButtonC styles={[commonStyling.headerButton]} image={images.backArrow}/>
-            </View>
-
             <ScrollViewC>
                 <Text>{user.privileges.isBarber ? messages.barber : messages.customer}</Text>
                 <Text>
                     <Text>{user.firstName} </Text>
                     <Text>{user.lastName}</Text>
                 </Text>
+                <ButtonC label={messages.editor.viewAllAppointments} styles={[styles.viewAllAppointments]}/>
                 <ButtonC label={messages.editor.viewAllBans} styles={[styles.viewAllBans]}/>
                 <ButtonC label={messages.editor.setBan} styles={[styles.setBan]}/>
                 <ButtonC label={messages.editor.viewAllNotes} styles={[styles.viewAllNotes]}/>
                 <ButtonC label={messages.editor.setNote} styles={[styles.setNote]}/>
+                <CheckBox isChecked={user.privileges.isBarber} label={messages.editor.isBarber}/>
             </ScrollViewC>
 
             <View style={commonStyling.footer}>
@@ -46,6 +44,9 @@ function UserEditor(props: Props) {
 export default UserEditor;
 
 const styles = StyleSheet.create({
+    viewAllAppointments: {
+        backgroundColor: "coral",
+    },
     viewAllBans: {
         backgroundColor: "orange",
     },

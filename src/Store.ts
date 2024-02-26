@@ -1,5 +1,13 @@
 class UserPrivileges {
     public isBarber: boolean = false;
+
+    public canPostNotes: boolean = false;
+
+    public canBan: boolean = false;
+
+    public canEditServices: boolean = false;
+
+    public canViewOthers: boolean = false;
 }
 
 export class User {
@@ -148,6 +156,8 @@ class Store {
     public datesSpan: Date[] = [];
 
     public bans: Ban[] = [];
+
+    public notes: Note[] = [];
 }
 
 export const store = new Store();
@@ -168,6 +178,8 @@ store.appointments.push(new Appointment(Date(), store.customers[1], store.barber
 store.appointments.push(new Appointment(Date(), store.customers[2], store.barbers[0], store.services[2]));
 
 store.bans.push(new Ban(store.customers[0], store.barbers[0], Date().toString(), "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorem autem nam quas nemo inventore animi labore, vel dolore quae quis amet sequi repellat ratione enim quasi voluptates, praesentium magnam necessitatibus! Porro, cum illo at animi, perspiciatis laudantium delectus, itaque amet tempore nihil natus dolores? Incidunt architecto natus corrupti accusantium.", Date().toString()))
+
+store.notes.push(new Note("all", store.barbers[0], Date().toString(), "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorem autem nam quas nemo inventore animi labore, vel dolore quae quis amet sequi repellat ratione enim quasi voluptates, praesentium magnam necessitatibus! Porro, cum illo at animi, perspiciatis laudantium delectus, itaque amet tempore nihil natus dolores? Incidunt architecto natus corrupti accusantium.", Date().toString(), "daily"));
 
 const today = new Date();
 for(let i = 0; i < 14; i++) {

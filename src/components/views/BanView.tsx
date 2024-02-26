@@ -14,19 +14,27 @@ function BanView(props: BanViewProps) {
     const basicView = (
         <>
             <Text>{props.banMessage}</Text>
-            <Text>{messages.banExparation}</Text>
-            <TimeView time={props.endDate}/>
+            <Text>
+                <Text>{messages.banExparation}</Text>
+                <TimeView time={props.endDate}/>
+            </Text>
         </>
     );
 
     const additionalInfo = () => (
         <>
-            <Text>{messages.bannedBy}</Text>
-            <BarberView {...props.bannedBy}/>
-            <Text>{messages.banCustomer}</Text>
-            <CustomerView {...props.customer}/>
-            <Text>{messages.banDateSet}</Text>
-            <TimeView time={props.banDate}/>
+            <Text>
+                <Text>{messages.bannedBy}</Text>
+                <BarberView {...props.bannedBy} styles={[{fontSize: 14}]}/>
+            </Text>
+            <Text>
+                <Text>{messages.banCustomer} </Text>
+                <CustomerView {...props.customer}/>
+            </Text>
+            <Text>
+                <Text>{messages.banDateSet}</Text>
+                <TimeView time={props.banDate}/>
+            </Text>
         </>
     );
 

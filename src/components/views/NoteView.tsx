@@ -33,16 +33,26 @@ function NoteView(props: NoteViewProps) {
 
     const additionalInfo = () => (
         <>
-            <Text>{messages.notePostedBy}</Text>
-            <BarberView {...props.setBy}/>
-            <Text>{messages.notedCustomers}</Text>
-            {renderCustomers()}
-            <Text>{messages.noteDateSet}</Text>
-            <TimeView time={props.setDate}/>
-            <Text>{messages.noteExparation}</Text>
-            <TimeView time={props.endDate}/>
-            <Text>{messages.noteRepeat}</Text>
-            {renderRepeat()}
+            <Text>
+                <Text>{messages.notePostedBy} </Text>
+                <BarberView {...props.setBy} styles={[{fontSize: 14}]}/>
+            </Text>
+            <Text>
+                <Text>{messages.notedCustomers} </Text>
+                {renderCustomers()}
+            </Text>
+            <Text>
+                <Text>{messages.noteDateSet} </Text>
+                <TimeView time={props.setDate}/>
+            </Text>
+            <Text>
+                <Text>{messages.noteExparation} </Text>
+                <TimeView time={props.endDate}/>
+            </Text>
+            <Text>
+                <Text>{messages.noteRepeat} </Text>
+                {renderRepeat()}
+            </Text>
         </>
     );
 
