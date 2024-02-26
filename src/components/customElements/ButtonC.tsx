@@ -23,17 +23,16 @@ export default ButtonC;
 const styles = StyleSheet.create({
     button: {
         width: "80%",
-        padding: 15,
+        padding: 12,
         flex: -1,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
         alignContent: "center",
         gap: 10,
-        borderRadius: 10
+        borderRadius: 10,
     },
     text: {
         fontSize: 20,
-        minHeight: 27,
     }
 });

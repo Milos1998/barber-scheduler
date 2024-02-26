@@ -1,12 +1,13 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParams } from '../../../App';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { messages } from '../../constants/Messages';
 import ButtonC from '../../components/customElements/ButtonC';
 import { commonStyling } from '../../constants/Styles';
 import { store } from '../../Store';
 import AppointmentView from '../../components/views/AppointmentView';
+import ScrollViewC from '../../components/customElements/ScrollViewC';
 
 export type AppointmentsProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "Appointments">
@@ -25,9 +26,9 @@ function Appointments(props: Props) {
 
     return (
         <View style={commonStyling.screen}>
-            <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+            <ScrollViewC>
                 {renderAppointments()}
-            </ScrollView>
+            </ScrollViewC>
 
             <View style={commonStyling.footer}>
                 <ButtonC label={messages.addMore} styles={[commonStyling.confirmButton]}/>

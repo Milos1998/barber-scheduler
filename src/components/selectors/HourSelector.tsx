@@ -1,8 +1,8 @@
 import React from 'react';
 import ButtonC from '../customElements/ButtonC';
 import { store } from '../../Store';
-import { ScrollView, StyleSheet } from 'react-native';
-import { commonStyling } from '../../constants/Styles';
+import { StyleSheet } from 'react-native';
+import ScrollViewC from '../customElements/ScrollViewC';
 
 type HourSelectorProps = {};
 
@@ -29,9 +29,9 @@ function HourSelector(props: HourSelectorProps) {
     }
 
     return (
-        <ScrollView style={commonStyling.scroll} contentContainerStyle={[commonStyling.scrollInner, styles.scroll]}>
+        <ScrollViewC innerStyle={[styles.scroll]}>
             {renderHours()}
-        </ScrollView>
+        </ScrollViewC>
     );
 }
 

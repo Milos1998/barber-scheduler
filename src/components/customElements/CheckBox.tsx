@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 type CheckBoxProps = {
     isChecked: boolean,
     label: string,
-    onToggle: () => any,
+    onToggle?: () => any,
     styles?: Object[],
     boxStyle?: Object[],
     textStyle?: Object[],

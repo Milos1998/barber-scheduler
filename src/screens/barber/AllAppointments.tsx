@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { commonStyling } from '../../constants/Styles';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParams } from '../../../App';
@@ -9,6 +9,7 @@ import { store } from '../../Store';
 import AppointmentView from '../../components/views/AppointmentView';
 import ButtonC from '../../components/customElements/ButtonC';
 import { messages } from '../../constants/Messages';
+import ScrollViewC from '../../components/customElements/ScrollViewC';
 
 export type AllAppointmentsProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "AllAppointments">;
@@ -26,15 +27,15 @@ function AllAppointments(props: Props) {
     }
 
     return (
-        <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+        <ScrollViewC>
             <View style={commonStyling.headerVertical}>
-                <BarberSelector />
+                <BarberSelector horizontal={true} />
                 <DaySelector />
             </View>
-            <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+            <ScrollViewC>
                 {renderAppointments()}
-            </ScrollView>
-        </ScrollView>
+            </ScrollViewC>
+        </ScrollViewC>
     );
 }
 

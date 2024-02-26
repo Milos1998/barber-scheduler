@@ -1,8 +1,8 @@
 import React from 'react';
-import { Barber } from '../../Store';
 import { StyleSheet, Text } from 'react-native';
+import { User } from '../../Store';
 
-type Props = Barber & {
+type Props = User & {
     styles?: Object[]
 }
 
@@ -10,12 +10,10 @@ function BarberView(props: Props) {
     const allStyles: Object[] = [styles.wrapper];
     if (props.styles !== undefined) allStyles.push(...props.styles)
     return (
-        <>
-            <Text style={allStyles}>
-                <Text>{props.firstName} </Text>
-                <Text>{props.lastName}</Text>
-            </Text>
-        </>
+        <Text style={allStyles}>
+            <Text>{props.firstName} </Text>
+            <Text>{props.lastName}</Text>
+        </Text>
     );
 }
 

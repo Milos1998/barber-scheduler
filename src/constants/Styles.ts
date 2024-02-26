@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const commonStyling = StyleSheet.create({
     screen: {
         backgroundColor: "snow",
-        height: "100%",
         width: "100%",
         flex: 1,
         alignItems: "center",
@@ -46,6 +45,11 @@ export const commonStyling = StyleSheet.create({
     },
     scroll: {
         width: "100%",
+        flex: 1,
+    },
+    scrollHorizontal: {
+        width: "100%",
+        flex: -1,
     },
     scrollInner: {
         flexGrow: 1,
@@ -54,8 +58,9 @@ export const commonStyling = StyleSheet.create({
         alignContent: "center",
         gap: 10,
         padding: 20,
+        // backgroundColor: "red"
     },
-    scrollHorizontal: {
+    scrollInnerHorizontal: {
         flexGrow: 1,
         flexDirection: "row",
         justifyContent: "flex-start",
@@ -63,15 +68,10 @@ export const commonStyling = StyleSheet.create({
         alignContent: "center",
         gap: 10,
         padding: 10,
-    },
-    flexRow: {
-        flex: 1,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
+        // backgroundColor: "blue"
     },
     flexColumn: {
-        flex: 1,
+        flex: -1,
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",

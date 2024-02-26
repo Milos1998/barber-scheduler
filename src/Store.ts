@@ -1,4 +1,8 @@
-export class Customer {
+class UserPrivileges {
+    public isBarber: boolean = false;
+}
+
+export class User {
     public email: string;
 
     public firstName: string;
@@ -11,6 +15,8 @@ export class Customer {
 
     public notifications: Note[] = [];
 
+    public privileges: UserPrivileges = new UserPrivileges();
+
     constructor(email: string, firstName: string, lastName: string, id: string) {
         this.email = email;
         this.firstName = firstName;
@@ -22,30 +28,17 @@ export class Customer {
 export class Appointment {
     public time: string;
 
-    public customer: Customer;
+    public customer: User;
 
-    public barber: Barber;
+    public barber: User;
 
     public service: Service;
 
-    constructor(time: string, customer: Customer, barber: Barber, service: Service) {
+    constructor(time: string, customer: User, barber: User, service: Service) {
         this.time = time;
         this.customer = customer;
         this.barber = barber;
         this.service = service;
-    }
-}
-
-export class Barber {
-    public firstName: string;
-
-    public lastName: string;
-
-    public customers?: Customer[];
-
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 }
 
@@ -64,9 +57,9 @@ export class Service {
 }
 
 export class Ban {
-    public customer: Customer;
+    public customer: User;
 
-    public bannedBy: Barber;
+    public bannedBy: User;
 
     public banDate: string;
 
@@ -74,7 +67,7 @@ export class Ban {
 
     public endDate: string;
 
-    constructor(customer: Customer, bannedBy: Barber, banDate: string, banMessage: string, endDate: string) {
+    constructor(customer: User, bannedBy: User, banDate: string, banMessage: string, endDate: string) {
         this.customer = customer;
         this.bannedBy = bannedBy;
         this.banDate = banDate;
@@ -84,9 +77,9 @@ export class Ban {
 }
 
 export class Note {
-    public customers: Customer[] | "all";
+    public customers: User[] | "all";
 
-    public setBy: Barber;
+    public setBy: User;
 
     public setDate: string;
 
@@ -96,7 +89,7 @@ export class Note {
 
     public repeat: "daily" | "once" | "always";
 
-    constructor(customers: Customer[] | "all", setBy: Barber, setDate: string, noteMessage: string, endDate: string, repeat: "daily" | "once" | "always") {
+    constructor(customers: User[] | "all", setBy: User, setDate: string, noteMessage: string, endDate: string, repeat: "daily" | "once" | "always") {
         this.customers = customers;
         this.setBy = setBy;
         this.setDate = setDate;
@@ -106,14 +99,33 @@ export class Note {
     }
 }
 
+export class Allert {
+    public fromTime: string;
+
+    public toTime: string;
+
+    public forService: Service;
+
+    public forBarber: User;
+
+    constructor (fromTime: string, toTime: string, forService: Service, forBarber: User) {
+        this.fromTime = fromTime;
+        this.toTime = toTime;
+        this.forService = forService;
+        this.forBarber = forBarber;
+    }
+}
+
 class Store {
     public appointments: Appointment[] = [];
 
-    public barbers: Barber[] = [];
+    public barbers: User[] = [];
 
     public services: Service[] = [];
 
-    public currentUser: Customer = new Customer("a", "aaa", "aaaa", "1");
+    public customers: User[] = [];
+
+    public currentUser: User = new User("pavle.pavlovic@gmail.com", "Pavle", "Pavlovic", "246810");
 
     public weeksDisplayed: number = 3;
 
@@ -131,23 +143,31 @@ class Store {
 
     public selectedService?: Service;
 
-    public selectedBarber?: Barber;
+    public selectedBarber?: User;
 
     public datesSpan: Date[] = [];
+
+    public bans: Ban[] = [];
 }
 
 export const store = new Store();
 
-store.barbers.push(new Barber("Lazar", "Lazarevic"));
-store.barbers.push(new Barber("Jovan", "Jovanovic"));
+store.barbers.push(new User("lazar@gmail.com", "Lazar", "Lazarevic", "123456"));
+store.barbers.push(new User("jovan@gmial.com", "Jovan", "Jovanovic", "56789"));
 
 store.services.push(new Service("Fejd", 30, 500));
 store.services.push(new Service("Brada", 20, 200));
 store.services.push(new Service("Fejd i brada", 50, 700));
 
-store.appointments.push(new Appointment(Date(), new Customer("petar.peric@gmail.com", "Petar", "Peric", "2"), store.barbers[0], store.services[0]));
-store.appointments.push(new Appointment(Date(), new Customer("mitar.miric@gmail.com", "Mitar", "Miric", "3"), store.barbers[1], store.services[1]));
-store.appointments.push(new Appointment(Date(), new Customer("mika.mikic@gmail.com", "Mika", "Mikic", "4"), store.barbers[0], store.services[2]));
+store.customers.push(new User("petar.peric@gmail.com", "Petar", "Peric", "2"));
+store.customers.push(new User("mitar.miric@gmail.com", "Mitar", "Miric", "3"));
+store.customers.push(new User("mika.mikic@gmail.com", "Mika", "Mikic", "4"));
+
+store.appointments.push(new Appointment(Date(), store.customers[0], store.barbers[0], store.services[0]));
+store.appointments.push(new Appointment(Date(), store.customers[1], store.barbers[1], store.services[1]));
+store.appointments.push(new Appointment(Date(), store.customers[2], store.barbers[0], store.services[2]));
+
+store.bans.push(new Ban(store.customers[0], store.barbers[0], Date().toString(), "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorem autem nam quas nemo inventore animi labore, vel dolore quae quis amet sequi repellat ratione enim quasi voluptates, praesentium magnam necessitatibus! Porro, cum illo at animi, perspiciatis laudantium delectus, itaque amet tempore nihil natus dolores? Incidunt architecto natus corrupti accusantium.", Date().toString()))
 
 const today = new Date();
 for(let i = 0; i < 14; i++) {

@@ -1,13 +1,14 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 import { RootStackParams } from '../../../App';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { messages } from '../../constants/Messages';
 import ButtonC from '../../components/customElements/ButtonC';
 import { commonStyling } from '../../constants/Styles';
 import { images } from '../../constants/Images';
 import TextInputC from '../../components/customElements/TextInputC';
 import { store } from '../../Store';
+import ScrollViewC from '../../components/customElements/ScrollViewC';
 
 export type ServiceEditorProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "ServiceEditor">;
@@ -40,14 +41,14 @@ function ServiceEditor(props: Props) {
                 <ButtonC styles={[commonStyling.headerButton]} image={images.backArrow}/>
             </View>
 
-            <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+            <ScrollViewC>
                 <Text style={styles.label}>{messages.editor.serviceName}</Text>
                 <TextInputC placeholder={messages.editor.serviceNamePlaceholder} value={service.name} onChangeText={onInputUpdate("name")}/>
                 <Text style={styles.label}>{messages.editor.serviceTime}</Text>
                 <TextInputC placeholder={messages.editor.serviceTimePlaceholder} value={service.durationMin} onChangeText={onInputUpdate("durationMin")} keyboardType="numeric"/>
                 <Text style={styles.label}>{messages.editor.servicePrice}</Text>
                 <TextInputC placeholder={messages.editor.servicePricePlaceholder} value={service.price} onChangeText={onInputUpdate("price")} keyboardType="numeric"/>
-            </ScrollView>
+            </ScrollViewC>
 
             <View style={commonStyling.footer}>
                 <ButtonC label={messages.save} styles={[commonStyling.confirmButton]}/>

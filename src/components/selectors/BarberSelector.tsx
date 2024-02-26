@@ -1,21 +1,23 @@
 import React from 'react';
-import { Pressable, ScrollView, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import BarberView from '../views/BarberView';
 import { store } from '../../Store';
-import { commonStyling } from '../../constants/Styles';
+import ScrollViewC from '../customElements/ScrollViewC';
 
 type BarberSelectorProps = {
-    containerStyles?: Object[],
+    styles?: Object[],
     horizontal?: boolean,
+    buttonStyling?: Object[],
 }
 
 function BarberSelector(props: BarberSelectorProps) {
-    const scrollStyling = props.containerStyles !== undefined ? [commonStyling.scrollHorizontal, ...props.containerStyles] : [commonStyling.scrollHorizontal];
-
     const renderBarbers = () => {
         return store.barbers.map((barber, idx) => {
+            const buttonStyle: Object[] = [styles.barberButton];
+            if (props.buttonStyling !== undefined) buttonStyle.push(...props.buttonStyling);
+
             return(
-                <Pressable key={idx} style={styles.barberButton}>
+                <Pressable key={idx} style={buttonStyle}>
                     <BarberView {...barber} styles={[styles.barberText]}/>
                 </Pressable>
             );
@@ -23,9 +25,9 @@ function BarberSelector(props: BarberSelectorProps) {
     }
 
     return (
-        <ScrollView horizontal={props.horizontal ?? true} style={commonStyling.scroll} contentContainerStyle={scrollStyling}>
+        <ScrollViewC horizontal={props.horizontal} innerStyle={props.styles}>
             {renderBarbers()}
-        </ScrollView>
+        </ScrollViewC>
     );
 }
 

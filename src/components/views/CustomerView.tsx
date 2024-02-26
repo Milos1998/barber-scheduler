@@ -1,9 +1,9 @@
 import React from 'react';
-import { Customer } from '../../Store';
+import { User } from '../../Store';
 import { StyleSheet, Text } from 'react-native';
 import { messages } from '../../constants/Messages';
 
-function CustomerView(props: Customer) {
+function CustomerView(props: User) {
     return (
         <>
             <Text style={styles.header}>{messages.customer}:</Text>

@@ -1,11 +1,12 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParams } from '../../App';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { images } from '../constants/Images';
 import { messages } from '../constants/Messages';
 import { commonStyling } from '../constants/Styles';
 import ButtonC from '../components/customElements/ButtonC';
+import ScrollViewC from '../components/customElements/ScrollViewC';
 
 export type ContactProps = {};
 type Props = NativeStackScreenProps<RootStackParams, "Contact">
@@ -17,7 +18,7 @@ function Contact(props: Props) {
                 <ButtonC styles={[commonStyling.headerButton]} image={images.backArrow}/>
             </View>
 
-            <ScrollView style={commonStyling.scroll} contentContainerStyle={commonStyling.scrollInner}>
+            <ScrollViewC>
                 <View style={styles.section}>
                     <Text style={styles.sectionHeader}>{messages.phone}</Text>
                     <ButtonC label={messages.phoneNum} styles={[styles.phoneButton]}/>
@@ -26,7 +27,7 @@ function Contact(props: Props) {
                     <Text style={styles.sectionHeader}>{messages.address}</Text>
                     <Text style={styles.sectionContent}>{messages.addressValue}</Text>
                 </View>
-            </ScrollView>
+            </ScrollViewC>
         </View>
     );
 }

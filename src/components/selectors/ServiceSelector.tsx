@@ -1,22 +1,24 @@
 import React from 'react';
-import { Pressable, ScrollView } from 'react-native';
+import { Pressable } from 'react-native';
 import { commonStyling } from '../../constants/Styles';
 import { store } from '../../Store';
 import ServiceView from '../views/ServiceView';
+import ScrollViewC from '../customElements/ScrollViewC';
 
 type ServiceSelectorProps = {
     styles?: Object[],
     horizontal?: boolean,
+    buttonStyling?: Object[],
 }
 
 function ServiceSelector(props: ServiceSelectorProps) {
-    const scrollStyling: Object[] = [commonStyling.scrollHorizontal];
-    if (props.styles !== undefined) scrollStyling.push(...props.styles)
-
     const renderServices = () => {
         return store.services.map((service, idx) => {
+            const buttonStyle: Object[] = [commonStyling.flexColumn];
+            if (props.buttonStyling !== undefined) buttonStyle.push(...props.buttonStyling);
+
             return(
-                <Pressable key={idx} style={[commonStyling.flexColumn]}>
+                <Pressable key={idx} style={buttonStyle}>
                     <ServiceView {...service}/>
                 </Pressable>
             );
@@ -24,9 +26,9 @@ function ServiceSelector(props: ServiceSelectorProps) {
     }
 
     return (
-        <ScrollView horizontal={props.horizontal ?? true} style={commonStyling.scroll} contentContainerStyle={scrollStyling}>
+        <ScrollViewC horizontal={props.horizontal} innerStyle={props.styles}>
             {renderServices()}
-        </ScrollView>
+        </ScrollViewC>
     );
 }
 
