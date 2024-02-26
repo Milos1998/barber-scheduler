@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login, { LoginProps } from './src/screens/Login';
-import Appointments, { AppointmentsProps } from './src/screens/apointment/Appointments';
+import Appointments, { AppointmentsProps } from './src/screens/customer/Appointments';
 import Contact, { ContactProps } from './src/screens/Contact';
 import Ban, { BanProps } from './src/screens/Ban';
 import ServiceEditor, { ServiceEditorProps } from './src/screens/edit/ServiceEditor';
-import OrderScreen, { OrderScreenProps } from './src/screens/order/OrderScreen';
+import OrderScreen, { OrderScreenProps } from './src/screens/customer/OrderScreen';
 import BarbersMenu, { BarbersMenuProps } from './src/screens/barber/BarbersMenu';
 import AllAppointments, { AllAppointmentsProps } from './src/screens/barber/AllAppointments';
 import AllServices, { AllServicesProps } from './src/screens/barber/AllServices';
@@ -14,6 +14,7 @@ import UserEditor, { UserEditorProps } from './src/screens/edit/UserEditor';
 import { store } from './src/Store';
 import AllBans, { AllBansProps } from './src/screens/barber/AllBans';
 import AllNotes, { AllNotesProps } from './src/screens/barber/AllNotes';
+import BusinessHoursEditor, { BusinessHoursEditorProps } from './src/screens/edit/BusinessHoursEditor';
 
 export type RootStackParams = {
   Login: LoginProps
@@ -29,6 +30,7 @@ export type RootStackParams = {
   AllAppointments: AllAppointmentsProps
   AllBans: AllBansProps
   AllNotes: AllNotesProps
+  BusinessHoursEditor: BusinessHoursEditorProps
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -36,7 +38,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='AllBans'>
+      <Stack.Navigator initialRouteName='BusinessHoursEditor'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="Ban" component={ Ban }/>
         <Stack.Screen name="Appointments" component={ Appointments }/>
@@ -50,6 +52,7 @@ export default function App() {
         <Stack.Screen name="AllAppointments" component={ AllAppointments }/>
         <Stack.Screen name="AllBans" component={ AllBans }/>
         <Stack.Screen name="AllNotes" component={ AllNotes }/>
+        <Stack.Screen name="BusinessHoursEditor" component={ BusinessHoursEditor }/>
       </Stack.Navigator>
     </NavigationContainer>
   );

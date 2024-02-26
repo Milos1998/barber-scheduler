@@ -10,6 +10,29 @@ class UserPrivileges {
     public canViewOthers: boolean = false;
 }
 
+type TimeSpan = {
+    from: string,
+    to: string,
+}
+
+class BusinessHours {
+    public sun: TimeSpan[] = [];
+
+    public mon: TimeSpan[] = [];
+
+    public tue: TimeSpan[] = [];
+
+    public wed: TimeSpan[] = [];
+
+    public thu: TimeSpan[] = [];
+
+    public fri: TimeSpan[] = [];
+
+    public sat: TimeSpan[] = [];
+
+    public exceptions: TimeSpan[] = [];
+}
+
 export class User {
     public email: string;
 
@@ -179,7 +202,7 @@ store.appointments.push(new Appointment(Date(), store.customers[2], store.barber
 
 store.bans.push(new Ban(store.customers[0], store.barbers[0], Date().toString(), "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorem autem nam quas nemo inventore animi labore, vel dolore quae quis amet sequi repellat ratione enim quasi voluptates, praesentium magnam necessitatibus! Porro, cum illo at animi, perspiciatis laudantium delectus, itaque amet tempore nihil natus dolores? Incidunt architecto natus corrupti accusantium.", Date().toString()))
 
-store.notes.push(new Note("all", store.barbers[0], Date().toString(), "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorem autem nam quas nemo inventore animi labore, vel dolore quae quis amet sequi repellat ratione enim quasi voluptates, praesentium magnam necessitatibus! Porro, cum illo at animi, perspiciatis laudantium delectus, itaque amet tempore nihil natus dolores? Incidunt architecto natus corrupti accusantium.", Date().toString(), "daily"));
+store.notes.push(new Note(store.customers, store.barbers[0], Date().toString(), "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorem autem nam quas nemo inventore animi labore, vel dolore quae quis amet sequi repellat ratione enim quasi voluptates, praesentium magnam necessitatibus! Porro, cum illo at animi, perspiciatis laudantium delectus, itaque amet tempore nihil natus dolores? Incidunt architecto natus corrupti accusantium.", Date().toString(), "daily"));
 
 const today = new Date();
 for(let i = 0; i < 14; i++) {

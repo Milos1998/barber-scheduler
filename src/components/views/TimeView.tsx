@@ -9,12 +9,17 @@ type TimeViewProps = {
 function TimeView(props: TimeViewProps) {
     const date = new Date(props.time);
 
+    const formatTime = (time: number) => {
+        if (time < 10) return `0${time}`;
+        return time;
+    }
+
     return (
         <>
             <Text>
                 <Text>{date.getDate()}/{date.getMonth()}/{date.getFullYear()}</Text>
                 <Text> {messages.at} </Text>
-                <Text>{date.getHours()}:{date.getMinutes()}</Text>
+                <Text>{formatTime(date.getHours())}:{formatTime(date.getMinutes())}</Text>
             </Text>
         </>
     );

@@ -24,7 +24,7 @@ function BanView(props: BanViewProps) {
     const additionalInfo = () => (
         <>
             <Text>
-                <Text>{messages.bannedBy}</Text>
+                <Text>{messages.bannedBy} </Text>
                 <BarberView {...props.bannedBy} styles={[{fontSize: 14}]}/>
             </Text>
             <Text>
@@ -32,7 +32,7 @@ function BanView(props: BanViewProps) {
                 <CustomerView {...props.customer}/>
             </Text>
             <Text>
-                <Text>{messages.banDateSet}</Text>
+                <Text>{messages.banDateSet} </Text>
                 <TimeView time={props.banDate}/>
             </Text>
         </>

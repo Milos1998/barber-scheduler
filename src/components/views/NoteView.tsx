@@ -18,11 +18,11 @@ function NoteView(props: NoteViewProps) {
             <Text>{messages.everyone}</Text>
         );
 
-        props.customers.map((customer, idx) => {
+        return props.customers.map((customer, idx) => {
             return (
-                <CustomerView {...customer} key={idx}/>
+                <Text key={idx}>{customer.firstName} {customer.lastName}, </Text>
             )
-        })
+        });
     };
 
     const renderRepeat = () => {
@@ -37,7 +37,7 @@ function NoteView(props: NoteViewProps) {
                 <Text>{messages.notePostedBy} </Text>
                 <BarberView {...props.setBy} styles={[{fontSize: 14}]}/>
             </Text>
-            <Text>
+            <Text numberOfLines={2}>
                 <Text>{messages.notedCustomers} </Text>
                 {renderCustomers()}
             </Text>

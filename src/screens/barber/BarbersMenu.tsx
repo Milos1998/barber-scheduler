@@ -17,6 +17,7 @@ function BarbersMenu(props: Props) {
             <ButtonC styles={[styles.button]} label={messages.barberMenu.appointments}/>
             <ButtonC styles={[styles.button]} label={messages.barberMenu.notes}/>
             <ButtonC styles={[styles.button]} label={messages.barberMenu.ban}/>
+            <ButtonC styles={[styles.button]} label={messages.barberMenu.businessHours}/>
         </ScrollViewC>
     );
 }

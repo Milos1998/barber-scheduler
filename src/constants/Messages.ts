@@ -50,6 +50,7 @@ export const messages = {
         notes: "Obavestenja",
         services: "Usluge",
         ban: "Ban",
+        businessHours: "Radni sati",
     },
     daysOfWeek: ["Nedelja", "Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota"],
     banExparation: "Ban prestaje:",
@@ -68,4 +69,6 @@ export const messages = {
     dayPlaceholder: "DD",
     monthPlaceholder: "MM",
     yearPlaceholder: "GGGG",
+    hourPlaceholder: "HH",
+    minutePlaceholder: "mm"
 } as const;
