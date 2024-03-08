@@ -69,6 +69,7 @@ export const messages = {
     dayPlaceholder: "DD",
     monthPlaceholder: "MM",
     yearPlaceholder: "GGGG",
-    hourPlaceholder: "HH",
-    minutePlaceholder: "mm"
+    hourPlaceholder: "hh",
+    minutePlaceholder: "mm",
+    exceptions: "Izuzeci",
 } as const;

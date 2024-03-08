@@ -49,6 +49,13 @@ export const commonStyling = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    flexRow: {
+        flex: -1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 2,
+    },
     leftAlignedView: {
         flex: -1,
         alignItems: "baseline",

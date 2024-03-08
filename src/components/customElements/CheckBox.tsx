@@ -13,11 +13,9 @@ type CheckBoxProps = {
 function CheckBox(props: CheckBoxProps) {
     const pressableStyles: Object[] = [styles.main];
     if (props.styles !== undefined) pressableStyles.push(...props.styles);
-
     const viewStyles: Object[] = [styles.box];
     if (props.isChecked) viewStyles.push(styles.checked);
     if (props.boxStyle !== undefined) viewStyles.push(...props.boxStyle);
-
     const textStyles: Object[] = [styles.label];
     if (props.textStyle !== undefined) viewStyles.push(...props.textStyle);
 

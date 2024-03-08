@@ -10,27 +10,15 @@ class UserPrivileges {
     public canViewOthers: boolean = false;
 }
 
-type TimeSpan = {
+export type TimeSpan = {
     from: string,
     to: string,
 }
 
 class BusinessHours {
-    public sun: TimeSpan[] = [];
+    public workingHours: TimeSpan[][] = [[], [{ from: Date().toString(), to: Date().toString() }, { from: Date().toString(), to: Date().toString() }], [], [], [], [], []] as const;
 
-    public mon: TimeSpan[] = [];
-
-    public tue: TimeSpan[] = [];
-
-    public wed: TimeSpan[] = [];
-
-    public thu: TimeSpan[] = [];
-
-    public fri: TimeSpan[] = [];
-
-    public sat: TimeSpan[] = [];
-
-    public exceptions: TimeSpan[] = [];
+    public exceptions: TimeSpan[] = [{ from: Date().toString(), to: Date().toString() }, { from: Date().toString(), to: Date().toString() }];
 }
 
 export class User {
@@ -47,6 +35,8 @@ export class User {
     public notifications: Note[] = [];
 
     public privileges: UserPrivileges = new UserPrivileges();
+
+    public businessHours: BusinessHours = new BusinessHours();
 
     constructor(email: string, firstName: string, lastName: string, id: string) {
         this.email = email;

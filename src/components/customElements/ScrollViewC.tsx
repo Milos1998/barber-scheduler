@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     scroll: {
         width: "100%",
         flex: 1,
-        padding: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 10
     },
     scrollHorizontal: {
         width: "100%",

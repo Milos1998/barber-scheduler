@@ -5,15 +5,22 @@ export type ButtonCProps = {
     label?: string,
     image?: any,
     styles?: Object[],
+    textStyles?: Object[],
+    imageStyles?: Object[],
 } & PressableProps
 
 function ButtonC(props: ButtonCProps) {
-    const componentStyle = props.styles !== undefined ? [styles.button, ...props.styles] : [styles.button];
+    const componentStyle: Object[] = [styles.button];
+    if (props.styles) componentStyle.push(...props.styles);
+    const textStyle: Object[] = [styles.text];
+    if (props.textStyles) textStyle.push(...props.textStyles);
+    const imageStyle: Object[] = [];
+    if (props.imageStyles) imageStyle.push(...props.imageStyles);
 
     return (
         <Pressable {...props} style={componentStyle}>
-            { props.label !== undefined && <Text style={styles.text}>{props.label}</Text> }
-            { props.image !== undefined && <Image source={props.image}/> }
+            { props.label !== undefined && <Text style={textStyle}>{props.label}</Text> }
+            { props.image !== undefined && <Image source={props.image} style={imageStyle}/> }
         </Pressable>
     );
 }
