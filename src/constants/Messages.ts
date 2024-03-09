@@ -72,4 +72,11 @@ export const messages = {
     hourPlaceholder: "hh",
     minutePlaceholder: "mm",
     exceptions: "Izuzeci",
+    allUsers: "Svi",
+    send: "Posalji",
+    enterNotification: "Unesi tekst notifikacije",
+    recipients: "Primaoci",
+    notificationEnd: "Notifikacija traje do",
+    chooseUser: "Odaberi korisnika",
+    enterBanReason: "Unesi razlog banovanja",
 } as const;

@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParams } from '../../App';
-import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { messages } from '../constants/Messages';
 import { images } from '../constants/Images';
 import { commonStyling } from '../constants/Styles';

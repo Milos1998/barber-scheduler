@@ -1,13 +1,15 @@
 import React from 'react';
 import { User } from '../../Store';
-import { StyleSheet, Text } from 'react-native';
-import { messages } from '../../constants/Messages';
+import { Text } from 'react-native';
 
-function CustomerView(props: User) {
+type Props = User & {
+    style?: Object | Object[],
+};
+
+function CustomerView(props: Props) {
     return (
         <>
-            <Text style={styles.header}>{messages.customer}: </Text>
-            <Text>
+            <Text style={props.style}>
                 <Text>{props.firstName} </Text>
                 <Text>{props.lastName}</Text>
             </Text>
@@ -16,9 +18,3 @@ function CustomerView(props: User) {
 }
 
 export default CustomerView;
-
-const styles = StyleSheet.create({
-    header: {
-        fontWeight: "bold"
-    }
-});

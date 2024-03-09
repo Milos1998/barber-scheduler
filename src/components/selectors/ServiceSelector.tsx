@@ -1,9 +1,10 @@
 import React from 'react';
-import { Pressable } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { commonStyling } from '../../constants/Styles';
 import { store } from '../../Store';
 import ServiceView from '../views/ServiceView';
 import ScrollViewC from '../customElements/ScrollViewC';
+import ButtonC from '../customElements/ButtonC';
 
 type ServiceSelectorProps = {
     styles?: Object[],
@@ -14,13 +15,13 @@ type ServiceSelectorProps = {
 function ServiceSelector(props: ServiceSelectorProps) {
     const renderServices = () => {
         return store.services.map((service, idx) => {
-            const buttonStyle: Object[] = [commonStyling.flexColumn];
+            const buttonStyle: Object[] = [commonStyling.flexColumn, styles.button];
             if (props.buttonStyling !== undefined) buttonStyle.push(...props.buttonStyling);
 
             return(
-                <Pressable key={idx} style={buttonStyle}>
+                <ButtonC key={idx} styles={buttonStyle}>
                     <ServiceView {...service}/>
-                </Pressable>
+                </ButtonC>
             );
         })
     }
@@ -33,3 +34,13 @@ function ServiceSelector(props: ServiceSelectorProps) {
 }
 
 export default ServiceSelector;
+
+const styles = StyleSheet.create({
+    button: {
+        gap: 0,
+        margin: 0,
+        paddingHorizontal: 7,
+        paddingVertical: 0,
+        width: "auto",
+    }
+});

@@ -19,6 +19,7 @@ function ButtonC(props: ButtonCProps) {
 
     return (
         <Pressable {...props} style={componentStyle}>
+            <>{props.children}</>
             { props.label !== undefined && <Text style={textStyle}>{props.label}</Text> }
             { props.image !== undefined && <Image source={props.image} style={imageStyle}/> }
         </Pressable>

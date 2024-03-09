@@ -1,5 +1,0 @@
-Refaktorisi sve delove order prikaza
-
-zameni pressable sa obicnim view, ako mora ili treba. Mislim da je to okej jer pressable ima dodatne listenere, koji mogu da uspore (mozda) aplikaciju
-
-Customer preimenuj u User i customer i barber da budu isti, samo sa razlicitim privilegijama

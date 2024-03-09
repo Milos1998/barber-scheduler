@@ -15,6 +15,8 @@ import { store } from './src/Store';
 import AllBans, { AllBansProps } from './src/screens/barber/AllBans';
 import AllNotes, { AllNotesProps } from './src/screens/barber/AllNotes';
 import BusinessHoursEditor, { BusinessHoursEditorProps } from './src/screens/edit/BusinessHoursEditor';
+import SetNote, { SetNoteProps } from './src/screens/barber/SetNote';
+import SetBan, { SetBanProps } from './src/screens/barber/SetBan';
 
 export type RootStackParams = {
   Login: LoginProps
@@ -31,6 +33,8 @@ export type RootStackParams = {
   AllBans: AllBansProps
   AllNotes: AllNotesProps
   BusinessHoursEditor: BusinessHoursEditorProps
+  SetNote: SetNoteProps,
+  SetBan: SetBanProps
 }
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -38,7 +42,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='BusinessHoursEditor'>
+      <Stack.Navigator initialRouteName='Ban'>
         <Stack.Screen name="Login" component={ Login }/>
         <Stack.Screen name="Ban" component={ Ban }/>
         <Stack.Screen name="Appointments" component={ Appointments }/>
@@ -53,6 +57,8 @@ export default function App() {
         <Stack.Screen name="AllBans" component={ AllBans }/>
         <Stack.Screen name="AllNotes" component={ AllNotes }/>
         <Stack.Screen name="BusinessHoursEditor" component={ BusinessHoursEditor }/>
+        <Stack.Screen name="SetNote" component={ SetNote }/>
+        <Stack.Screen name="SetBan" component={ SetBan }/>
       </Stack.Navigator>
     </NavigationContainer>
   );

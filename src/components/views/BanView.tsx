@@ -15,7 +15,7 @@ function BanView(props: BanViewProps) {
         <>
             <Text>{props.banMessage}</Text>
             <Text>
-                <Text>{messages.banExparation}</Text>
+                <Text>{messages.banExparation} </Text>
                 <TimeView time={props.endDate}/>
             </Text>
         </>
