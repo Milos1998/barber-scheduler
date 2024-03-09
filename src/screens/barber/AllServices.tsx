@@ -5,7 +5,6 @@ import { StyleSheet, View } from 'react-native';
 import ButtonC from '../../components/customElements/ButtonC';
 import { messages } from '../../constants/Messages';
 import { commonStyling } from '../../constants/Styles';
-import { images } from '../../constants/Images';
 import BarberSelector from '../../components/selectors/BarberSelector';
 import ServiceSelector from '../../components/selectors/ServiceSelector';
 
@@ -15,10 +14,6 @@ type Props = NativeStackScreenProps<RootStackParams, "AllServices">;
 function AllServices(props: Props) {
     return (
         <View style={commonStyling.screen}>
-            <View style={commonStyling.header}>
-                <ButtonC styles={[commonStyling.headerButton]} image={images.backArrow}/>
-            </View>
-
             <BarberSelector horizontal={true}/>
             <ServiceSelector horizontal={false} buttonStyling={[styles.serviceButton]}/>
 

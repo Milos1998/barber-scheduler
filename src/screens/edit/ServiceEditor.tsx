@@ -37,10 +37,6 @@ function ServiceEditor(props: Props) {
 
     return (
         <View style={commonStyling.screen}>
-            <View style={commonStyling.header}>
-                <ButtonC styles={[commonStyling.headerButton]} image={images.backArrow}/>
-            </View>
-
             <ScrollViewC>
                 <Text style={styles.label}>{messages.editor.serviceName}</Text>
                 <TextInputC placeholder={messages.editor.serviceNamePlaceholder} value={service.name} onChangeText={onInputUpdate("name")}/>
